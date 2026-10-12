@@ -76,7 +76,7 @@ public class CuratorZookeeperConnectionFactory implements ZookeeperConnectionFac
 
         client.start();
         try {
-            if (!client.blockUntilConnected(3, TimeUnit.SECONDS)) {
+            if (!client.blockUntilConnected(30, TimeUnit.SECONDS)) {
                 client.close();
                 throw new IllegalStateException("connect " + params.getUrl() + " failed");
             }
